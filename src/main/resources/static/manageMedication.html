@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Medication</title>
+
+    <!-- Reference to the CSS in static/css -->
+    <link rel="stylesheet" type="text/css" href="/css/stylemanagemedication.css">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="/images/logo.png" alt="logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Sign In</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="manageMedication.html">Manage Medication</a></li>
+                <li><a href="#">Mood Tracker</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="title">Manage Medication</div>
+            <div><h5> Fill out the fields and hit the save button to add your new medication.</h5></div>
+            <form action="#">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details"> Medication Name</span>
+                        <input type="text" placeholder="Enter Medication name" required> 
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Type</span>
+                        <input type="text" placeholder="Capsule/Injection ..." required> 
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Dose</span>
+                        <input type="text" placeholder="100 mg" required> 
+                    </div>
+                    <div class="input-box">
+                        <span class="details"> Amount</span>
+                        <input type="text" placeholder="1" required> 
+                    </div>
+                </div>
+                <div class="reminder-details">
+                    <input type="radio" name="reminder" id="dot-1">
+                    <input type="radio" name="reminder" id="dot-2">
+                    <input type="radio" name="reminder" id="dot-3">
+                    <span class="reminder-title">Reminder</span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="reminder">Once a day</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="reminder">Twice a day</span>
+                        </label> 
+                        <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="reminder">Three times a day</span>
+                        </label> 
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Save">
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
