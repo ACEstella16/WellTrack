@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Medication</title>
-    <link rel="stylesheet" type="text/css" href="stylemanagemedication.css">
+    <title>WellTrack - Manage Medication</title>
+    <link rel="stylesheet" href="stylemanagemedication.css">
 </head>
-
 <body>
-    <div class="header"></div>
     <header>
-        <img class="logo" src="logo.png" alt="logo">
+        <img class="logo" src="logo.png" alt="WellTrack Logo">
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Sign In</a></li>
@@ -25,58 +23,35 @@
     </header>
     <main>
         <div class="container">
-            <div class="title">Manage Medication</div>
-            <div><h5> Fill out the fields and hit the save button to add your new medication.</h5></div>
-            <form action="#">
-                <div class="user-details">
-                    <div class="input-box">
-                        <span class="details"> Medication Name</span>
-                        <input type="text" placeholder="Enter Medication name" required> 
-                    </div>
-                    <div class="input-box">
-                        <span class="details"> type</span>
-                        <input type="text" placeholder="Capsule/Injection ..." required> 
-                    </div>
-                    <div class="input-box">
-                        <span class="details"> Dose</span>
-                        <input type="text" placeholder="100 mg" required> 
-                    </div>
-                    <div class="input-box">
-                        <span class="details"> Amount</span>
-                        <input type="text" placeholder="1" required> 
-                    </div>
-                    
+            <h1 class="title">Manage Medication</h1>
+            <p>Fill out the fields below and hit "Save" to add your medication and set reminders.</p>
+            <form id="medication-form">
+                <div class="form-section">
+                    <label for="medName" class="form-label">Medication Name:</label>
+                    <input type="text" id="medName" placeholder="Enter medication name" required>
                 </div>
-
-
-                <div class="reminder-details">
-                    <input type="radio" name="reminder" id="dot-1">
-                    <input type="radio" name="reminder" id="dot-2">
-                    <input type="radio" name="reminder" id="dot-3">
-                    <span class="reminder-title">Reminder</span>
-                    <div class="category">
-                        <label for="dot-1">
-                            <span class="dot one"></span>
-                            <span class="reminder">once a day</span>
-                        </label>
-                        <label for="dot-2">
-                            <span class="dot two"></span>
-                            <span class="reminder">twice a day</span>
-                        </label> 
-                        <label for="dot-3">
-                            <span class="dot three"></span>
-                            <span class="reminder">three times a day</span>
-                        </label> 
-                    </div>
+                <div class="form-section">
+                    <label for="medType" class="form-label">Type:</label>
+                    <input type="text" id="medType" placeholder="Capsule/Injection" required>
                 </div>
-
-                <div class="button">
-                    <input type="submit" value="Save">
-                    
+                <div class="form-section">
+                    <label for="medDose" class="form-label">Dose:</label>
+                    <input type="text" id="medDose" placeholder="e.g., 100 mg" required>
+                </div>
+                <div class="form-section">
+                    <label for="medAmount" class="form-label">Amount:</label>
+                    <input type="text" id="medAmount" placeholder="e.g., 1" required>
+                </div>
+                <div class="form-section">
+                    <label for="medTime" class="form-label">Time:</label>
+                    <input type="time" id="medTime" required>
+                </div>
+                <div class="form-section">
+                    <button type="submit" class="btn-save">Save</button>
                 </div>
             </form>
-            
         </div>
     </main>
+    <script src="managemedications.js"></script>
 </body>
 </html>
