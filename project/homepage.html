@@ -1,1 +1,33 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - WellTrack</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="logo.png" alt="WellTrack Logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="manageMedication.html">Manage Medication</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="index.html" id="sign-out">Sign Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="dashboard-container">
+            <h1>User Dashboard</h1>
+            <p>Here are your scheduled medications:</p>
+            <div id="medications-dashboard" class="medications-list">
+                <p>No medications scheduled yet. Add medications on the <a href="manageMedication.html">Manage Medication</a> page.</p>
+            </div>
+        </div>
+    </main>
+    <script src="homepage.js"></script>
+</body>
+</html>
