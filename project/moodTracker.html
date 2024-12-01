@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WellTrack - Mood Tracker</title>
+    <link rel="stylesheet" href="styleMoodTracker.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="logo.png" alt="WellTrack Logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="manageMedication.html">Manage Medication</a></li>
+                <li><a href="moodTracker.html">Mood Tracker</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="index.html" id="sign-out">Sign Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1 class="title">Mood Tracker</h1>
+            <p>Log your daily mood to track your emotional health over time.</p>
+            <div class="mood-slider">
+                <h2>How do I feel?</h2>
+                <div class="emoji-container">
+                    <span id="mood-emoji" class="emoji">😐</span>
+                    <span id="mood-description" class="description">Neutral</span>
+                </div>
+                <input type="range" id="mood-range" min="0" max="4" value="2" step="1">
+                <div class="mood-labels">
+                    <span>Unpleasant</span>
+                    <span>Pleasant</span>
+                </div>
+            </div>
+            <div class="mood-details">
+                <h3>What best describes this feeling?</h3>
+                <div id="mood-tags" class="tags">
+                    <!-- Dynamic tags will be inserted here -->
+                </div>
+            </div>
+            <button id="log-mood" class="btn">Log Mood</button>
+
+            <h2 class="history-title">Mood History (Last 7 Days)</h2>
+            <div id="mood-history">
+                <p>No mood entries yet. Start logging your mood today!</p>
+            </div>
+        </div>
+    </main>
+    <script src="moodTracker.js"></script>
+</body>
+</html>

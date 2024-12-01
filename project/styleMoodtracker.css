@@ -1,0 +1,157 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10%;
+    background-color: #3b5994;
+}
+
+.logo {
+    height: 50px;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #dfe3ee;
+}
+
+/* Mood Tracker Container */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 2em;
+    color: #3b5994;
+    margin-bottom: 20px;
+}
+
+.mood-slider {
+    margin-top: 20px;
+}
+
+.emoji-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.emoji {
+    font-size: 3em;
+}
+
+.description {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #333;
+}
+
+#mood-range {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.mood-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.tags span {
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tags span:hover {
+    background-color: #3b5994;
+    color: #fff;
+}
+
+button.btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #3b5994;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+    background-color: #2e4372;
+}
+
+/* Mood History */
+.history-title {
+    font-size: 1.5em;
+    margin-top: 30px;
+    color: #333;
+}
+
+#mood-history {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 1em;
+}
+
+.mood-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f7f9fc;
+}
+
+.mood-entry span {
+    font-size: 1.1em;
+}
