@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WellTrack - Reports</title>
+    <link rel="stylesheet" href="styleReports.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="logo.png" alt="WellTrack Logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="manageMedication.html">Manage Medication</a></li>
+                <li><a href="moodTracker.html">Mood Tracker</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="#" id="sign-out">Sign Out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1 class="title">Adherence and Wellness Reports</h1>
+            <form id="report-form">
+                <div class="form-group">
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="endDate">End Date:</label>
+                    <input type="date" id="endDate" required>
+                </div>
+                <button type="submit" class="btn">Generate Report</button>
+            </form>
+            <div id="report-section" class="hidden">
+                <h2>Report Summary</h2>
+                <div id="adherence-chart" class="chart"></div>
+                <div id="mood-chart" class="chart"></div>
+                <p id="report-text"></p>
+                <div class="report-actions">
+                    <button id="export-pdf" class="btn">Export as PDF</button>
+                    <button id="print-report" class="btn">Print</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="reports.js"></script>
+</body>
+</html>

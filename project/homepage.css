@@ -9,9 +9,6 @@
 body {
     background-color: #f7f9fc;
     color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 /* Header Styles */
@@ -45,30 +42,24 @@ header {
     color: #dfe3ee;
 }
 
-/* Main Dashboard Styles */
-.dashboard-container {
+/* Dashboard Container */
+.container {
     max-width: 800px;
-    margin: 40px auto;
+    margin: 50px auto;
     text-align: center;
-    padding: 20px;
     background: #fff;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.dashboard-container h1 {
+.title {
+    font-size: 2em;
     color: #3b5994;
-    font-size: 2.5em;
     margin-bottom: 20px;
 }
 
-.dashboard-container p {
-    color: #555;
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-.medications-list {
+#medication-list {
     margin-top: 20px;
     text-align: left;
 }
@@ -77,20 +68,92 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
     background-color: #f7f9fc;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.medication-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+.medication-buttons {
+    display: flex;
+    gap: 10px;
 }
 
-.medication-item span {
-    font-size: 1.1em;
-    color: #333;
+button.edit, button.delete {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+button.edit {
+    background-color: #ffcc00;
+    color: #fff;
+}
+
+button.edit:hover {
+    background-color: #e6b800;
+}
+
+button.delete {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+button.delete:hover {
+    background-color: #cc0000;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+button.btn {
+    padding: 10px 20px;
+    background-color: #3b5994;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn-cancel {
+    padding: 10px 20px;
+    background-color: #999;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background-color: #2e4372;
+}
+
+button.btn-cancel:hover {
+    background-color: #666;
 }

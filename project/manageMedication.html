@@ -4,60 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WellTrack - Manage Medication</title>
-    <link rel="stylesheet" href="stylemanagemedication.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="styleManageMedication.css">
 </head>
 <body>
     <header>
         <img class="logo" src="logo.png" alt="WellTrack Logo">
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Sign In</a></li>
                 <li><a href="homepage.html">Home</a></li>
                 <li><a href="manageMedication.html">Manage Medication</a></li>
-                <li><a href="#">Mood Tracker</a></li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="moodTracker.html">Mood Tracker</a></li>
+                <li><a href="reports.html">Reports</a></li>
                 <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="#" id="sign-out">Sign Out</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <div class="container">
             <h1 class="title">Manage Medication</h1>
-            <p>Fill out the fields below and hit "Save" to add your medication and set reminders.</p>
+            <p>Fill out the fields below to add your medication, set reminders, and customize notification preferences.</p>
             <form id="medication-form">
                 <div class="form-section">
-                    <label for="medName" class="form-label">Medication Name:</label>
+                    <label for="medName">Medication Name:</label>
                     <input type="text" id="medName" placeholder="Enter medication name" required>
                 </div>
                 <div class="form-section">
-                    <label for="medType" class="form-label">Type:</label>
-                    <input type="text" id="medType" placeholder="Capsule/Injection" required>
+                    <label for="medDose">Dose:</label>
+                    <input type="text" id="medDose" placeholder="e.g., 500 mg" required>
                 </div>
                 <div class="form-section">
-                    <label for="medDose" class="form-label">Dose:</label>
-                    <input type="text" id="medDose" placeholder="e.g., 100 mg" required>
-                </div>
-                <div class="form-section">
-                    <label for="medAmount" class="form-label">Amount:</label>
-                    <input type="text" id="medAmount" placeholder="e.g., 1" required>
-                </div>
-                <div class="form-section">
-                    <label for="medTime" class="form-label">Time:</label>
+                    <label for="medTime">Time:</label>
                     <input type="time" id="medTime" required>
                 </div>
                 <div class="form-section">
-                    <label for="medDates" class="form-label">Select Dates:</label>
-                    <input type="text" id="medDates" placeholder="Choose dates" required>
+                    <label for="medDays">Select Days:</label>
+                    <div class="days-checkboxes">
+                        <label><input type="checkbox" value="Monday"> Monday</label>
+                        <label><input type="checkbox" value="Tuesday"> Tuesday</label>
+                        <label><input type="checkbox" value="Wednesday"> Wednesday</label>
+                        <label><input type="checkbox" value="Thursday"> Thursday</label>
+                        <label><input type="checkbox" value="Friday"> Friday</label>
+                        <label><input type="checkbox" value="Saturday"> Saturday</label>
+                        <label><input type="checkbox" value="Sunday"> Sunday</label>
+                    </div>
+                </div>
+                <h3>Notification Settings</h3>
+                <div class="form-section">
+                    <label>
+                        <input type="checkbox" id="notifSound"> Enable Sound
+                    </label>
                 </div>
                 <div class="form-section">
-                    <button type="submit" class="btn-save">Save</button>
+                    <label>
+                        <input type="checkbox" id="notifVibration"> Enable Vibration
+                    </label>
+                </div>
+                <div class="form-section">
+                    <button type="button" id="test-notifications" class="btn">Test Notifications</button>
+                </div>
+                <div class="form-section">
+                    <button type="submit" class="btn">Save Medication</button>
                 </div>
             </form>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="managemedications.js"></script>
+    <script src="manageMedication.js"></script>
 </body>
 </html>
