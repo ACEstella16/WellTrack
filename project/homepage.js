@@ -70,6 +70,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Fetch and display the daily inspirational quote
+    const fetchDailyQuote = async () => {
+        try {
+            const response = await fetch("http://api.quotable.io/random");
+            const data = await response.json();
+            document.getElementById("quote-text").textContent = `"${data.content}" — ${data.author}`;
+        } catch (error) {
+            document.getElementById("quote-text").textContent = "Failed to load quote. Please try again later.";
+            console.error("Error fetching the quote:", error);
+        }
+    };
+
     // Initialize
     displayMedications();
+    fetchDailyQuote();
 });

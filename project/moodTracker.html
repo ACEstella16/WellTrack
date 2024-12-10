@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WellTrack - Mood Tracker</title>
     <link rel="stylesheet" href="styleMoodTracker.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -38,9 +39,7 @@
             </div>
             <div class="mood-details">
                 <h3>What best describes this feeling?</h3>
-                <div id="mood-tags" class="tags">
-                    <!-- Dynamic tags will be inserted here -->
-                </div>
+                <div id="mood-tags" class="tags"></div>
             </div>
             <button id="log-mood" class="btn">Log Mood</button>
 
@@ -48,6 +47,9 @@
             <div id="mood-history">
                 <p>No mood entries yet. Start logging your mood today!</p>
             </div>
+
+            <h2 class="trends-title">Mood Trends (Last 7 Days)</h2>
+            <canvas id="mood-trends-chart" width="400" height="200"></canvas>
         </div>
     </main>
     <script src="moodTracker.js"></script>

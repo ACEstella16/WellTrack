@@ -157,3 +157,30 @@ button.btn:hover {
 button.btn-cancel:hover {
     background-color: #666;
 }
+
+/* Daily Inspirational Quote Styles */
+.daily-quote {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #e6f7ff;
+    border-left: 5px solid #3b5994;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-style: italic;
+    color: #3b5994;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.daily-quote h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #3b5994;
+}
+
+#quote-text {
+    color: #555;
+    font-weight: 500;
+    line-height: 1.5;
+}
