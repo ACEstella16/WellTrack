@@ -1,24 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
     const medicationList = document.getElementById("medication-list");
     const editModal = document.getElementById("edit-modal");
-    const cancelEditBtn = document.getElementById("cancel-edit");
     const editMedicationForm = document.getElementById("edit-medication-form");
 
     let medications = JSON.parse(localStorage.getItem("medications")) || [];
     let currentEditIndex = null;
 
-    // Display medications in the dashboard
+    // Display medications
     const displayMedications = () => {
         if (medications.length > 0) {
             medicationList.innerHTML = medications
                 .map(
                     (med, index) => `
                     <div class="medication-item">
-                        <span><strong>${med.name}</strong> - ${med.dose} - ${med.time}</span>
-                        <div class="medication-buttons">
-                            <button class="edit" data-index="${index}">Edit</button>
-                            <button class="delete" data-index="${index}">Delete</button>
-                        </div>
+                        <h3>${med.name}</h3>
+                        <p><strong>Dose:</strong> ${med.dose}</p>
+                        <p><strong>Time:</strong> ${med.time}</p>
+                        <p><strong>Days:</strong> ${med.days.join(", ")}</p>
+                        <button class="edit" data-index="${index}">Edit</button>
+                        <button class="delete" data-index="${index}">Delete</button>
                     </div>`
                 )
                 .join("");
@@ -36,8 +36,16 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("edit-medName").value = med.name;
             document.getElementById("edit-medDose").value = med.dose;
             document.getElementById("edit-medTime").value = med.time;
-            document.getElementById("edit-medDates").value = med.dates.join(", ");
+            document.getElementById("edit-medDays").value = med.days.join(", ");
             editModal.classList.remove("hidden");
+        }
+
+        // Delete Medication
+        if (e.target.classList.contains("delete")) {
+            const index = e.target.dataset.index;
+            medications.splice(index, 1);
+            localStorage.setItem("medications", JSON.stringify(medications));
+            displayMedications();
         }
     });
 
@@ -48,41 +56,35 @@ document.addEventListener("DOMContentLoaded", () => {
             name: document.getElementById("edit-medName").value.trim(),
             dose: document.getElementById("edit-medDose").value.trim(),
             time: document.getElementById("edit-medTime").value.trim(),
-            dates: document.getElementById("edit-medDates").value.split(",").map((date) => date.trim()),
+            days: document.getElementById("edit-medDays").value.split(",").map((day) => day.trim()),
         };
         localStorage.setItem("medications", JSON.stringify(medications));
-        displayMedications();
         editModal.classList.add("hidden");
+        displayMedications();
     });
 
     // Cancel Edit
-    cancelEditBtn.addEventListener("click", () => {
+    document.getElementById("cancel-edit").addEventListener("click", () => {
         editModal.classList.add("hidden");
     });
 
-    // Delete Medication
-    medicationList.addEventListener("click", (e) => {
-        if (e.target.classList.contains("delete")) {
-            const index = e.target.dataset.index;
-            medications.splice(index, 1);
-            localStorage.setItem("medications", JSON.stringify(medications));
-            displayMedications();
-        }
-    });
+    // Daily Quote Functionality
+    const quotes = [
+        "Believe in yourself and all that you are.",
+        "You are stronger than you think.",
+        "Keep pushing forward, no matter what.",
+        "Every day is a new beginning.",
+        "Stay positive and good things will happen.",
+        "You are capable of amazing things.",
+        "Take it one step at a time.",
+        "Happiness is a choice, choose it daily.",
+        "You’ve got this!",
+        "Dream big, work hard, stay focused."
+    ];
 
-    // Fetch and display the daily inspirational quote
-    const fetchDailyQuote = async () => {
-        try {
-            const response = await fetch("http://api.quotable.io/random");
-            const data = await response.json();
-            document.getElementById("quote-text").textContent = `"${data.content}" — ${data.author}`;
-        } catch (error) {
-            document.getElementById("quote-text").textContent = "Failed to load quote. Please try again later.";
-            console.error("Error fetching the quote:", error);
-        }
-    };
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById("quote-text").textContent = `"${randomQuote}"`;
 
-    // Initialize
+    // Initial Display
     displayMedications();
-    fetchDailyQuote();
 });

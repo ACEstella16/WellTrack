@@ -1,28 +1,21 @@
-/* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
+/* General styling */
 body {
-    background-color: #f7f9fc;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fa;
     color: #333;
+    margin: 0;
 }
 
-/* Header Styles */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 10%;
     background-color: #3b5994;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo {
+header .logo {
     height: 50px;
-    cursor: pointer;
 }
 
 .nav-links {
@@ -32,56 +25,30 @@ header {
 }
 
 .nav-links a {
+    color: white;
     text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: #dfe3ee;
-}
-
-/* Dashboard Container */
 .container {
     max-width: 800px;
     margin: 50px auto;
-    text-align: center;
-    background: #fff;
+    background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.title {
-    font-size: 2em;
-    color: #3b5994;
-    margin-bottom: 20px;
-}
-
-#medication-list {
-    margin-top: 20px;
-    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .medication-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
     border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: #f7f9fc;
+    background: #f9f9f9;
 }
 
-.medication-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-button.edit, button.delete {
-    padding: 5px 10px;
+button {
+    padding: 8px 12px;
+    margin-right: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -89,98 +56,50 @@ button.edit, button.delete {
 }
 
 button.edit {
-    background-color: #ffcc00;
-    color: #fff;
+    background-color: #3b5994;
+    color: white;
 }
 
 button.edit:hover {
-    background-color: #e6b800;
+    background-color: #2e4372;
 }
 
 button.delete {
     background-color: #ff4d4d;
-    color: #fff;
+    color: white;
 }
 
 button.delete:hover {
     background-color: #cc0000;
 }
 
-/* Modal Styles */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 400px;
-    text-align: center;
-}
-
-.modal.hidden {
+/* Modal styling */
+.hidden {
     display: none;
 }
 
-button.btn {
-    padding: 10px 20px;
-    background-color: #3b5994;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button.btn-cancel {
-    padding: 10px 20px;
-    background-color: #999;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button.btn:hover {
-    background-color: #2e4372;
-}
-
-button.btn-cancel:hover {
-    background-color: #666;
-}
-
-/* Daily Inspirational Quote Styles */
-.daily-quote {
-    max-width: 800px;
-    margin: 30px auto;
+#edit-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
     padding: 20px;
-    background: #e6f7ff;
-    border-left: 5px solid #3b5994;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    font-style: italic;
-    color: #3b5994;
+    z-index: 1000;
+}
+.quote-section {
+    margin: 30px auto;
     text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-top: 2px solid #3b5994;
     font-size: 1.2em;
-}
-
-.daily-quote h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #3b5994;
-}
-
-#quote-text {
+    font-style: italic;
     color: #555;
-    font-weight: 500;
-    line-height: 1.5;
+}
+
+.quote-section p {
+    margin: 0;
 }

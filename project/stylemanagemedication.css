@@ -1,122 +1,55 @@
-/* Header styles */
+/* Shared styles for both pages */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fa;
+    color: #333;
+}
+
 header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    background-color: #3b5994;
     padding: 0 5%;
     height: 80px;
-    background-color: #3b5994;
 }
 
 .logo {
     height: 50px;
-    margin-right: 10px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px;
-    margin: 0;
+    gap: 20px;
 }
 
-.nav-links li a {
+.nav-links a {
+    color: white;
     text-decoration: none;
-    color: #fff;
     font-weight: 500;
-    transition: color 0.3s ease;
 }
 
-.nav-links li a:hover {
-    color: #dfe3ee;
-}
-
-/* Container styles */
+/* Specific styles for forms and medication list */
 .container {
-    max-width: 600px;
-    width: 90%;
-    background: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    max-width: 800px;
     margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-    font-size: 2em;
+    text-align: center;
     color: #3b5994;
-    margin-bottom: 20px;
 }
 
-.container p {
-    margin-bottom: 20px;
-    color: #555;
-    font-size: 1.1em;
-}
-
-/* Form styles */
-form {
-    width: 100%;
-    text-align: left;
-}
-
-.form-section {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 8px;
-    font-size: 0.95em;
-}
-
-.days-checkboxes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.days-checkboxes label {
-    background-color: #f4f4f4;
-    padding: 8px 12px;
+.medication-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.95em;
-    border: 1px solid #ccc;
-    transition: background-color 0.3s ease;
-}
-
-.days-checkboxes label:hover {
-    background-color: #e3e3e3;
-}
-
-.days-checkboxes input[type="checkbox"] {
-    margin-right: 8px;
-}
-
-button.btn {
-    width: 100%;
-    padding: 12px 20px;
-    background-color: #3b5994;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-button.btn:hover {
-    background-color: #2e4372;
-}
-
-h3 {
-    margin: 20px 0 10px;
-    color: #3b5994;
-    font-size: 1.2em;
 }

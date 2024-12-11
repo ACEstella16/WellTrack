@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WellTrack - Dashboard</title>
+    <title>WellTrack - Homepage</title>
     <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
@@ -14,51 +14,36 @@
                 <li><a href="homepage.html">Home</a></li>
                 <li><a href="manageMedication.html">Manage Medication</a></li>
                 <li><a href="moodTracker.html">Mood Tracker</a></li>
+                <li><a href="reports.html">Reports</a></li>
                 <li><a href="aboutus.html">About Us</a></li>
                 <li><a href="contactus.html">Contact Us</a></li>
-                <li><a href="#" id="sign-out">Sign Out</a></li>
+                <li><a href="index.html" id="sign-out">Sign Out</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        
         <div class="container">
-            <h1 class="title">User Dashboard</h1>
-            <p>Manage your current medications below:</p>
+            <h1>Your Medications</h1>
             <div id="medication-list">
                 <p>No medications added yet. Add medications from the <a href="manageMedication.html">Manage Medication</a> page.</p>
             </div>
-        </div>
-
-        <div class="daily-quote">
-            <h2>Daily Inspirational Quote</h2>
-            <p id="quote-text">Loading...</p>
-        </div>
-        
-        <!-- Modal for Editing Medication -->
-        <div id="edit-modal" class="modal hidden">
-            <div class="modal-content">
+            <div id="edit-modal" class="hidden">
                 <h2>Edit Medication</h2>
                 <form id="edit-medication-form">
-                    <div class="form-group">
-                        <label for="edit-medName">Medication Name:</label>
-                        <input type="text" id="edit-medName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="edit-medDose">Dose:</label>
-                        <input type="text" id="edit-medDose" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="edit-medTime">Time:</label>
-                        <input type="time" id="edit-medTime" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="edit-medDates">Dates:</label>
-                        <input type="text" id="edit-medDates" placeholder="YYYY-MM-DD, YYYY-MM-DD" required>
-                    </div>
+                    <label for="edit-medName">Medication Name:</label>
+                    <input type="text" id="edit-medName" required>
+                    <label for="edit-medDose">Dose:</label>
+                    <input type="text" id="edit-medDose" required>
+                    <label for="edit-medTime">Time:</label>
+                    <input type="time" id="edit-medTime" required>
+                    <label for="edit-medDays">Days (comma-separated):</label>
+                    <input type="text" id="edit-medDays" required>
                     <button type="submit" class="btn">Save Changes</button>
-                    <button type="button" id="cancel-edit" class="btn-cancel">Cancel</button>
+                    <button type="button" id="cancel-edit" class="btn">Cancel</button>
                 </form>
+            </div>
+            <div id="daily-quote" class="quote-section">
+                <p id="quote-text"></p>
             </div>
         </div>
     </main>

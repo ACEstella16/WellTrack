@@ -10,25 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return selectedDays;
     };
 
-    // Test notification functionality
-    const testNotification = () => {
-        const soundEnabled = document.getElementById("notifSound").checked;
-        const vibrationEnabled = document.getElementById("notifVibration").checked;
-
-        alert(
-            `Test Notification\nSound: ${soundEnabled ? "Enabled" : "Disabled"}\nVibration: ${vibrationEnabled ? "Enabled" : "Disabled"}`
-        );
-
-        if (vibrationEnabled && navigator.vibrate) {
-            navigator.vibrate([200, 100, 200]);
-        }
-    };
-
-    document.getElementById("test-notifications").addEventListener("click", () => {
-        testNotification();
-    });
-
-    // On form submission
+    // Save Medication Data
     medicationForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -53,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             localStorage.setItem("medications", JSON.stringify(medications));
-            alert("Medication and notification settings saved successfully!");
+            alert("Medication saved successfully!");
             medicationForm.reset();
         } else {
             alert("Please fill out all fields and select at least one day.");
